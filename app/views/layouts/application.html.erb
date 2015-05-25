@@ -14,9 +14,9 @@
   <div id='columns'>
     <div id="side">
       <p id='opentime'><%= Time.new.strftime('%Y/%m/%d %H:%M:%S') %></p>
-      <div id="cart">
+      <%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
         <%= render @cart %>
-      </div>
+      <% end %>
       <ul>
         <li><a href="http://www....">Home</a></li>
         <li><a href="http://www..../faq">Questions</a></li>
