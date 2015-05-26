@@ -68,7 +68,7 @@ class LineItemsController < ApplicationController
       notice = 'Not your cart !'
     end
     respond_to do |format|
-      format.html { redirect_to carts_url + "/#{@line_item.cart_id}", notice: notice }
+      format.html { redirect_to store_url, notice: notice }
       format.json { head :no_content }
     end
   end
