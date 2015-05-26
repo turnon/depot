@@ -67,8 +67,10 @@ class LineItemsController < ApplicationController
     else
       notice = 'Not your cart !'
     end
+    @cart = Cart.find_by(id: session[:cart_id])
     respond_to do |format|
-      format.html { redirect_to store_url, notice: notice }
+      format.html { redirect_to store_url }
+      format.js
       format.json { head :no_content }
     end
   end
